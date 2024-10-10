@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		ADAA27C6231BC02C00365194 /* light_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27C4231BC02B00365194 /* light_background.pdf */; };
 		ADAA27C7231BC02C00365194 /* dark_background.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27C5231BC02B00365194 /* dark_background.pdf */; };
 		ADAA27CE231BC87F00365194 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = ADAA27CD231BC87F00365194 /* README.md */; };
+		E7A2DF4D2CB7DA1900EB6F30 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E7A2DF4C2CB7DA1900EB6F30 /* SnapKit */; };
+		E7A2DF512CB7DD1200EB6F30 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A2DF502CB7DD1200EB6F30 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,7 @@
 		ADAA27C4231BC02B00365194 /* light_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = light_background.pdf; sourceTree = "<group>"; };
 		ADAA27C5231BC02B00365194 /* dark_background.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = dark_background.pdf; sourceTree = "<group>"; };
 		ADAA27CD231BC87F00365194 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E7A2DF502CB7DD1200EB6F30 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A2DF4D2CB7DA1900EB6F30 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,7 @@
 		ADAA27CA231BC3FA00365194 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E7A2DF502CB7DD1200EB6F30 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +121,9 @@
 			dependencies = (
 			);
 			name = Clima;
+			packageProductDependencies = (
+				E7A2DF4C2CB7DA1900EB6F30 /* SnapKit */,
+			);
 			productName = Clima;
 			productReference = ADAA27AD231BBFAF00365194 /* Clima.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +152,9 @@
 				Base,
 			);
 			mainGroup = ADAA27A4231BBFAF00365194;
+			packageReferences = (
+				E7A2DF4B2CB7DA1900EB6F30 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = ADAA27AE231BBFAF00365194 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,6 +188,7 @@
 				ADAA27B5231BBFAF00365194 /* WeatherViewController.swift in Sources */,
 				ADAA27B1231BBFAF00365194 /* AppDelegate.swift in Sources */,
 				ADAA27B3231BBFAF00365194 /* SceneDelegate.swift in Sources */,
+				E7A2DF512CB7DD1200EB6F30 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Clima/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Clima/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -372,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E7A2DF4B2CB7DA1900EB6F30 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E7A2DF4C2CB7DA1900EB6F30 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E7A2DF4B2CB7DA1900EB6F30 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ADAA27A5231BBFAF00365194 /* Project object */;
 }
