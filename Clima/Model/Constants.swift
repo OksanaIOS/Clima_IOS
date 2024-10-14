@@ -16,5 +16,5 @@ struct Constants {
     static let searchSF = "magnifyingglass"
     static let geoSF = "location.circle.fill"
     static let search = "Search"
-    static let coditionSF = "cloud.rain"
+    static let conditionSF = "cloud.rain"
 }
