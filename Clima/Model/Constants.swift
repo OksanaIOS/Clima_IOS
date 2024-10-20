@@ -17,4 +17,5 @@ struct Constants {
     static let geoSF = "location.circle.fill"
     static let search = "Search"
     static let conditionSF = "cloud.rain"
+    static let id = "9b541eb4db59348ea5b983ae037aaced"
 }

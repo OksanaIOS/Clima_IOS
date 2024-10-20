@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
     
@@ -40,9 +41,16 @@ class WeatherViewController: UIViewController {
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
+    
     private lazy var searchTextField: UITextField  = {
         let element = UITextField()
         element.placeholder = Constants.search
+        element.borderStyle = .roundedRect
+        element.textAlignment = .right
+        element.font = .systemFont(ofSize: 25)
+        element.textColor = .label
+        element.tintColor = .label
+        element.backgroundColor = .systemFill
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
     }()
@@ -57,6 +65,7 @@ class WeatherViewController: UIViewController {
     }()
     private lazy var tempLabel: UILabel  = {
         let element = UILabel()
+        element.font = .systemFont(ofSize: 80, weight: .black)
         
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -65,6 +74,7 @@ class WeatherViewController: UIViewController {
     private lazy var tempTypeLabel: UILabel  = {
         let element = UILabel()
         element.tintColor = .label
+        element.font = .systemFont(ofSize: 100, weight: .light)
 
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -73,6 +83,7 @@ class WeatherViewController: UIViewController {
     private lazy var cityLabel: UILabel  = {
         let element = UILabel()
         element.tintColor = .label
+        element.font = .systemFont(ofSize: 30)
 
         element.translatesAutoresizingMaskIntoConstraints = false
         return element
@@ -108,6 +119,9 @@ class WeatherViewController: UIViewController {
         return view
     }()
    
+    //MARK: - Private Properties
+    private var weatherManager = WeatherManager()
+    private let locationManager = CLLocationManager()
    
     
     
@@ -134,6 +148,7 @@ extension WeatherViewController {
         headerStackView.addArrangedSubview(geoButton)
         headerStackView.addArrangedSubview(searchTextField)
         headerStackView.addArrangedSubview(searchButton)
+        mainStackView.addArrangedSubview(emptyView)
         
         mainStackView.addArrangedSubview(conditionalImageView)
         mainStackView.addArrangedSubview(tempStackView)
@@ -142,7 +157,7 @@ extension WeatherViewController {
         tempStackView.addArrangedSubview(tempTypeLabel)
         
         mainStackView.addArrangedSubview(cityLabel)
-        mainStackView.addArrangedSubview(emptyView)
+    
 
         
         tempLabel.text = "21"
@@ -151,8 +166,8 @@ extension WeatherViewController {
         
     }
     
+    //MARK: - Setup Constraints
     private func setupConstraints() {
-       
         
         backgroundImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -180,6 +195,6 @@ extension WeatherViewController {
 }
 
 
-#Preview {
-    WeatherViewController()
-}
+//#Preview {
+//    WeatherViewController()
+//}
